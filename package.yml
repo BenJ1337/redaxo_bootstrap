@@ -3,7 +3,7 @@ version: "0.0.1"
 author: Benjamin Hacker
 
 page:
-    title: "Einstellungen"
+    title: "Bootstrap"
     icon: rex-icon fa-link
     perm: admin
 
