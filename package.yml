@@ -1,13 +1,13 @@
 package: redaxo_bootstrap
-version: "0.0.1"
+version: '0.0.1'
 author: Benjamin Hacker
 
 page:
-    title: "Bootstrap"
-    icon: rex-icon fa-link
-    perm: admin
+  title: 'Redaxo Bootstrap'
+  icon: rex-icon fa-link
+  perm: admin
 
 requires:
-    php:
-        version: ">=7.4.0"
-    redaxo: ">=5.0.0"
+  php:
+    version: '>=7.4.0'
+  redaxo: '>=5.0.0'

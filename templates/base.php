@@ -2,7 +2,7 @@
 include __DIR__ . '/../lib/Constants.php';
 
 $templateDebug = false;
-$addonName = 'redaxo_custom_components';
+$addonName = 'redaxo_bootstrap';
 $globalSettings = CM_Global_Request_Settings::getInstance();
 // rex_addon::get($addonName)->setConfig($modul, false);
 // rex_config::get($addonName, $modul);

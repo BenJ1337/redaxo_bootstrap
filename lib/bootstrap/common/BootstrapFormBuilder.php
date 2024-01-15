@@ -5,11 +5,11 @@ class CM_BootstrapFormBuilder
     private $mdWidth = '6';
     private $smWidth = '12';
     private $xsWidth = '12';
-    private $slice;
+    private $sliceId;
 
-    function __construct($slice)
+    function __construct($sliceId)
     {
-        $this->slice = $slice;
+        $this->sliceId = $sliceId;
     }
 
     public function withLgWidth($width)
@@ -39,9 +39,9 @@ class CM_BootstrapFormBuilder
         $output .= '<div class="form-group">';
         $dropDown = new DropDown(
             rex_i18n::msg('cm_bootstrap_grid_large'),
-            1,
             [BootstrapColWidth::lg],
-            $this->slice != null ? rex_var::toArray($this->slice->getValue(1)) : null,
+            $this->sliceId,
+            1,
             array(
                 "1" => "1",
                 "2" => "2",
@@ -63,9 +63,9 @@ class CM_BootstrapFormBuilder
             . '<div class="form-group">';
         $dropDown = new DropDown(
             rex_i18n::msg('cm_bootstrap_grid_medium'),
-            1,
             [BootstrapColWidth::md],
-            $this->slice != null ? rex_var::toArray($this->slice->getValue(1)) : null,
+            $this->sliceId,
+            1,
             array(
                 "1" => "1",
                 "2" => "2",
@@ -87,9 +87,9 @@ class CM_BootstrapFormBuilder
             . '<div class="form-group">';
         $dropDown = new DropDown(
             rex_i18n::msg('cm_bootstrap_grid_small'),
-            1,
             [BootstrapColWidth::sm],
-            $this->slice != null ? rex_var::toArray($this->slice->getValue(1)) : null,
+            $this->sliceId,
+            1,
             array(
                 "1" => "1",
                 "2" => "2",
@@ -112,9 +112,9 @@ class CM_BootstrapFormBuilder
 
         $dropDown = new DropDown(
             rex_i18n::msg('cm_bootstrap_grid_extra_small'),
-            1,
             [BootstrapColWidth::xs],
-            $this->slice != null ? rex_var::toArray($this->slice->getValue(1)) : null,
+            $this->sliceId,
+            1,
             array(
                 "1" => "1",
                 "2" => "2",
