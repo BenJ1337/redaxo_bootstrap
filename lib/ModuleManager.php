@@ -17,8 +17,10 @@ class ModuleManager
             $rex_values_settings[BootstrapColWidth::lg],
             $rex_values_settings[BootstrapColWidth::md],
             $rex_values_settings[BootstrapColWidth::sm],
-            $rex_values_settings[BootstrapColWidth::xs]
+            $rex_values_settings[BootstrapColWidth::xs],
+            $this->sliceId
         );
+
         $outputBuilder->withFrontendOutput($output);
 
         return $outputBuilder->build();
@@ -28,14 +30,14 @@ class ModuleManager
     public function getInput($input)
     {
         return '<ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#general">Einstellungen</a></li>
-        <li><a data-toggle="tab" href="#nested">Breite</a></li>
+        <li class="active"><a data-toggle="tab" href="#general-' . $this->sliceId . '">Einstellungen</a></li>
+        <li><a data-toggle="tab" href="#nested-' . $this->sliceId . '">Breite</a></li>
         </ul>
         <div class="tab-content">
-            <div id="general" class="tab-pane fade in active">
+            <div id="general-' . $this->sliceId . '" class="tab-pane fade in active">
                 ' . $input . '
             </div>
-            <div id="nested" class="tab-pane fade">
+            <div id="nested-' . $this->sliceId . '" class="tab-pane fade">
                 <div class="form-group">
                     ' . self::bootstrap(rex_article_slice::getArticleSliceById($this->sliceId)) . '
                 </div>

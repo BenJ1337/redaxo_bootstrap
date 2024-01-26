@@ -39,6 +39,7 @@ class ContentBuilder
             }
             $minColumnSize = self::getMinimum($colSizeMap);
             $theme_class = isset($rex_values_settings['theme_class']) ? $rex_values_settings['theme_class'] : '';
+            $bild = isset($rex_values_settings['bild']) && !empty($rex_values_settings['bild']) ?  '/media/' . $rex_values_settings['bild'] : '';
             $no_padding_class = isset($rex_values_settings['no_padding']) ? $rex_values_settings['no_padding'] : '';
 
             $css_classes = $theme_class . " " . $no_padding_class;
@@ -64,11 +65,11 @@ class ContentBuilder
                     $content .= self::openColumn($colSizeMap, $css_classes);
                 } else {
                     if (!$containerOpen) {
-                        $content .= self::openContainer($containerSize, $css_classes);
+                        $content .= self::openContainer($containerSize, $css_classes, $bild);
                         $containerOpen = true;
                     } else {
                         $content .= self::closeContainer();
-                        $content .= self::openContainer($containerSize, $css_classes);
+                        $content .= self::openContainer($containerSize, $css_classes, $bild);
                         $containerOpen = true;
                     }
                 }
@@ -131,10 +132,14 @@ class ContentBuilder
         }
         return $content;
     }
-    private static function openContainer($containerSize = '', $css_classes = '')
+    private static function openContainer($containerSize = '', $css_classes = '', $image = '')
     {
         $content = '';
-        $content .= '<div class="container' . $containerSize . ' ' . $css_classes . '">';
+        $content .= '<div class="container' . $containerSize . ' ' . $css_classes . '"';
+        if (!empty($image)) {
+            $content .= 'style="background: url(' . $image . ')"';
+        }
+        $content .= '>';
         return $content;
     }
     private static function openColumn($currentSliceColumnSize,  $css_classes = '')
