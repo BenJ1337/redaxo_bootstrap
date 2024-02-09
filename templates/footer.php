@@ -4,15 +4,18 @@
             <div class="col-12">
                 <div class="footer-wrapper">
                     <?php
-                    if (empty(rex_addon::get(ADDON_KEY)->getConfig(IMPRESSUM_KEY))) {
+
+                    use redaxo_bootstrap\Settings;
+
+                    if (empty(Settings::getImpressum())) {
                         rex_logger::logError(E_WARNING, "Impressum nicht gesetzt!", __file__, 8);
                     }
-                    if (empty(rex_addon::get(ADDON_KEY)->getConfig(DATENSCHUTZ_KEY))) {
+                    if (empty(Settings::getDatenschutz())) {
                         rex_logger::logError(E_WARNING, "Datenschutz nicht gesetzt!", __file__, 8);
                     }
                     ?>
-                    <a href="<?= rex_getUrl(rex_addon::get(ADDON_KEY)->getConfig(IMPRESSUM_KEY)); ?>">Impressum</a>
-                    <a href="<?= rex_getUrl(rex_addon::get(ADDON_KEY)->getConfig(DATENSCHUTZ_KEY)); ?>">Datenschutzerklärung</a>
+                    <a href="<?= rex_getUrl(Settings::getImpressum()); ?>">Impressum</a>
+                    <a href="<?= rex_getUrl(Settings::getDatenschutz()); ?>">Datenschutzerklärung</a>
                 </div>
             </div>
         </div>

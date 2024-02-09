@@ -23,11 +23,20 @@ if (isset($metaDescription) && !empty($metaDescription)) {
     echo '<meta name="description" content="' . $metaDescription . '">';
 }
 ?>
+<?php
+
+use redaxo_bootstrap\Settings;
+
+$favicon = Settings::getFavicon();
+
+echo '<link rel="icon" type="image/png"  href="' . ($subdirectory . 'media/' . $favicon) . '">';
+
+// <link rel="icon" type="image/png" sizes="32x32" href="<?= $subdirectory . rex_addon::get('be_style')->getAssetsUrl('plugins/redaxo/icons/favicon-16x16.png') >">
+// <link rel="icon" type="image/png" sizes="180x180" href="<?= $subdirectory . rex_addon::get('be_style')->getAssetsUrl('plugins/redaxo/icons/apple-touch-icon.png') >">
+// <link rel="icon" type="image/png" sizes="192x192" href="<?= $subdirectory . rex_addon::get('be_style')->getAssetsUrl('plugins/redaxo/icons/android-chrome-192x192.png') >">
+?>
 
 <meta name="author" content="Benjamin Hacker">
-<link rel="icon" type="image/png" sizes="32x32" href="<?= $subdirectory . rex_addon::get('be_style')->getAssetsUrl('plugins/redaxo/icons/favicon-16x16.png') ?>">
-<link rel="icon" type="image/png" sizes="180x180" href="<?= $subdirectory . rex_addon::get('be_style')->getAssetsUrl('plugins/redaxo/icons/apple-touch-icon.png') ?>">
-<link rel="icon" type="image/png" sizes="192x192" href="<?= $subdirectory . rex_addon::get('be_style')->getAssetsUrl('plugins/redaxo/icons/android-chrome-192x192.png') ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="<?= $subdirectory . rex_addon::get('redaxo_bootstrap')->getAssetsUrl('frontend/bootstrap_5/bootstrap.min.css') ?>">
 <script src="<?= $subdirectory . rex_addon::get('redaxo_bootstrap')->getAssetsUrl('frontend/bootstrap_5/bootstrap.bundle.min.js') ?>"></script>

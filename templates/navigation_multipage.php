@@ -17,7 +17,7 @@ $navHtml = preg_replace('/rex-article-[0-9]+\s+/', '', $navHtml);
 $navHtml = preg_replace('/rex-navi-[0-9]+/', '', $navHtml);
 
 ?>
-<div class=" my-navbar"><!-- CSS: fixed-top -->
+<div class="my-navbar"><!-- CSS: fixed-top -->
     <nav class="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm">
         <button class="navbar-toggler first-button" type="button" data-toggle="collapse" data-target="#mobil-nav" aria-controls="mobil-nav" aria-expanded="false" aria-label="Toggle navigation">
             <div class="animated-icon1"><span></span><span></span><span></span></div>

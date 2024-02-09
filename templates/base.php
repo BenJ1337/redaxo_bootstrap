@@ -1,10 +1,10 @@
 <?php
-include __DIR__ . '/../lib/Constants.php';
+
+use redaxo_bootstrap\Settings, redaxo_bootstrap\Constants;
 
 $templateDebug = false;
-$addonName = 'redaxo_bootstrap';
 $globalSettings = CM_Global_Request_Settings::getInstance();
-$thisAddon = rex_addon::get($addonName);
+$thisAddon = rex_addon::get(Constants::ADDON_KEY);
 
 $curArtikel = rex_article::getCurrent();
 $curArtikelId = -1;

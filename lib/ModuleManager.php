@@ -35,7 +35,9 @@ class ModuleManager
         </ul>
         <div class="tab-content">
             <div id="general-' . $this->sliceId . '" class="tab-pane fade in active">
-                ' . $input . '
+                <div class="form-group">
+                    ' . $input . '
+                </div>
             </div>
             <div id="nested-' . $this->sliceId . '" class="tab-pane fade">
                 <div class="form-group">

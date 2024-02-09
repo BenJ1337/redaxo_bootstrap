@@ -11,7 +11,19 @@ $content = ContentBuilder::buildContent($arr);
     <?php include("header.php"); ?>
 </head>
 
-<body class="frontend">
+<?php
+
+use redaxo_bootstrap\Settings;
+
+$styles = '';
+$bodyBackgroundImage = Settings::getBackogrundImage();
+
+$styles .= 'background: url(/media/' . $bodyBackgroundImage . ');';
+$styles .= 'background-size: cover;background-repeat: no-repeat;background-position: top, center;';
+?>
+
+
+<body class="frontend" style="<?= $styles ?>">
     <?php
     if (!empty(rex_article::getCurrent()->getValue('art_onepage_main'))) {
         include("navigation_onepage.php");
