@@ -1,4 +1,9 @@
 <?php
+
+namespace redaxo_bootstrap;
+
+use rex_article_slice;
+
 class ModuleManager
 {
     private $sliceId;

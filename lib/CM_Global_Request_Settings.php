@@ -1,5 +1,7 @@
 <?php
 
+namespace redaxo_bootstrap;
+
 class CM_Global_Request_Settings
 {
     private static $globalSettings = null;

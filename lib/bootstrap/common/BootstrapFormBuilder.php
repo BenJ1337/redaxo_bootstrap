@@ -1,4 +1,6 @@
 <?php
+
+namespace redaxo_bootstrap;
 class CM_BootstrapFormBuilder
 {
     private $lgWidth = '6';

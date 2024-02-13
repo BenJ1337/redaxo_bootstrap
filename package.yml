@@ -1,6 +1,7 @@
 package: redaxo_bootstrap
 version: '0.0.1'
 author: Benjamin Hacker
+supportpage: https://github.com/BenJ1337/redaxo_bootstrap
 
 page:
   title: 'Redaxo Bootstrap'
@@ -9,5 +10,7 @@ page:
 
 requires:
   php:
-    version: '>=7.4.0'
+    version: '>=8.0.0'
   redaxo: '>=5.0.0'
+  packages:
+    redaxo_eingabekomponenten: '>=0.0.1'

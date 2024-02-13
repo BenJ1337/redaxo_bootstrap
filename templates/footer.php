@@ -14,8 +14,14 @@
                         rex_logger::logError(E_WARNING, "Datenschutz nicht gesetzt!", __file__, 8);
                     }
                     ?>
-                    <a href="<?= rex_getUrl(Settings::getImpressum()); ?>">Impressum</a>
-                    <a href="<?= rex_getUrl(Settings::getDatenschutz()); ?>">Datenschutzerklärung</a>
+                    <?php
+                    if (null !== Settings::getImpressum()) {
+                        echo '<a href="' . rex_getUrl(Settings::getImpressum()) . '">Impressum</a>';
+                    }
+                    if (null !== Settings::getDatenschutz()) {
+                        echo '<a href="' . rex_getUrl(Settings::getDatenschutz()) . '">Datenschutzerklärung</a>';
+                    }
+                    ?>
                 </div>
             </div>
         </div>

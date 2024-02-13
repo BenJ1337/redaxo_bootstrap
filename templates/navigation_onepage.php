@@ -1,4 +1,5 @@
 <?php
+
 $dao = rex_sql::factory();
 
 $pathToOnepageArticle = '/';

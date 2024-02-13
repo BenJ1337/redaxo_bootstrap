@@ -1,4 +1,7 @@
 <?php
+
+namespace redaxo_bootstrap;
+
 class BootstrapColWidth
 {
     public const lg = 'bootstrap_column_width_lg';

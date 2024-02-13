@@ -1,4 +1,7 @@
 <?php
+
+use redaxo_bootstrap\{ContentBuilder};
+
 include("base.php");
 // All slices of one article
 $dao = rex_sql::factory();

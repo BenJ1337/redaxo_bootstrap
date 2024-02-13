@@ -1,4 +1,7 @@
 <?php
+
+namespace redaxo_bootstrap;
+
 class ContentBuilder
 {
 

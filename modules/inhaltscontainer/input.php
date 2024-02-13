@@ -1,5 +1,8 @@
 <?php
 
+use redaxo_eingabekomponenten\{DropDown, Bildauswahl, Checkbox};
+
+
 //$this->sliceSql) 
 $this->getContentAsQuery(true);
 $sliceId = $this->getCurrentSlice()->getId();

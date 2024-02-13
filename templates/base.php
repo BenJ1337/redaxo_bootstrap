@@ -1,6 +1,6 @@
 <?php
 
-use redaxo_bootstrap\Settings, redaxo_bootstrap\Constants;
+use redaxo_bootstrap\{Settings, Constants, CM_Global_Request_Settings};
 
 $templateDebug = false;
 $globalSettings = CM_Global_Request_Settings::getInstance();

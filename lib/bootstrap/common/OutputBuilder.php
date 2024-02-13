@@ -1,5 +1,9 @@
 <?php
 
+namespace redaxo_bootstrap;
+
+use rex;
+
 class CM_OutputBuilder
 {
 
