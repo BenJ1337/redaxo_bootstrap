@@ -2,7 +2,7 @@
 
 namespace redaxo_bootstrap;
 
-use rex;
+use rex, rex_i18n;
 
 class CM_OutputBuilder
 {

@@ -1,6 +1,9 @@
 <?php
 
 namespace redaxo_bootstrap;
+
+use redaxo_eingabekomponenten\DropDown, rex_i18n;
+
 class CM_BootstrapFormBuilder
 {
     private $lgWidth = '6';
