@@ -39,3 +39,7 @@ footer .footer-wrapper {
 footer .footer-wrapper a {
   padding: 0 10px;
 }
+
+.center {
+  margin: 0 auto;
+}

@@ -1,9 +1,12 @@
 <?php
+
+use redaxo_bootstrap\{ModuleManager};
+
 $sliceId = $this->getCurrentSlice()->getId();
 $slice = rex_article_slice::getArticleSliceById($sliceId);
 if (null !== $slice) {
 	$rex_values_content = json_decode($slice->getValue(1), true);
-	
+
 
 	if (rex::isBackend()) {
 		echo (new ModuleManager($sliceId))->getOutput('');

@@ -54,7 +54,7 @@ class ModuleManager
 
     private function bootstrap()
     {
-        $bootstrapFormBuilder = new CM_BootstrapFormBuilder(rex_article_slice::getArticleSliceById($this->sliceId));
+        $bootstrapFormBuilder = new CM_BootstrapFormBuilder($this->sliceId);
         $bootstrapFormBuilder->withLgWidth('6');
         $bootstrapFormBuilder->withMdWidth('6');
         $bootstrapFormBuilder->withSmWidth('6');

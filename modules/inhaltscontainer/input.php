@@ -2,12 +2,15 @@
 
 use redaxo_eingabekomponenten\{DropDown, Bildauswahl, Checkbox};
 
+use redaxo_bootstrap\{ModuleManager};
 
-//$this->sliceSql) 
 $this->getContentAsQuery(true);
 $sliceId = $this->getCurrentSlice()->getId();
 
-$dropDownBreiteInhalt = new DropDown(
+$output = '<input style="display: none;" type="text" id="text1" name="REX_INPUT_VALUE[1][slide_collector]" value="1" />
+<div class="tab-content">
+    <div id="a1" class="tab-pane fade in active">';
+$output .= '<div class="form-group">' . (new DropDown(
     "Breite des Inhalts",
     ["bootstrap_width"],
     $sliceId,
@@ -16,9 +19,8 @@ $dropDownBreiteInhalt = new DropDown(
         "normal" => "",
         "Rand" => "-fluid"
     )
-);
-
-$dropDownAnzahlBloecke = new DropDown(
+))->getHTML() . '</div>';
+$output .= '<div class="form-group">' . (new DropDown(
     "Anzahl Blöcke",
     ["slice_count"],
     $sliceId,
@@ -37,9 +39,8 @@ $dropDownAnzahlBloecke = new DropDown(
         "11" => "11",
         "12" => "12"
     )
-);
-
-$dropDownTheme = new DropDown(
+))->getHTML() . '</div>';
+$output .= '<div class="form-group">' . (new DropDown(
     "Theme",
     ["theme_class"],
     $sliceId,
@@ -50,30 +51,15 @@ $dropDownTheme = new DropDown(
         'Grau' => 'grey-theme',
         'Gelb' => 'yellow-theme'
     )
-);
-
-
-$bildauswahl = new Bildauswahl("Hintergrundbild",  ['bild'],  $sliceId, 1);
-
-
-$checkbox = new Checkbox(
+))->getHTML() . '</div>';
+$output .= '<div class="form-group">' . (new Bildauswahl("Hintergrundbild",  ['bild'],  $sliceId, 1))->getHTML() . '</div>';
+$output .= '<div class="form-group">' . (new Checkbox(
     "Keine Ränder",
     ["no_padding"],
     $sliceId,
     1,
     'no_padding'
-);
+))->getHTML() . '</div>';
 
-$html = '<input style="display: none;" type="text" id="text1" name="REX_INPUT_VALUE[1][slide_collector]" value="1" />
-<div class="tab-content">
-    <div id="a1" class="tab-pane fade in active">
-        <div class="form-group">' . $dropDownBreiteInhalt->getHTML() . '</div>
-        <div class="form-group">' . $dropDownAnzahlBloecke->getHTML() . '</div>
-        <div class="form-group">' . $dropDownTheme->getHTML() . '</div>
-        <div class="form-group">' . $checkbox->getHTML() . '</div>
-        <div class="form-group">' . $bildauswahl->getHTML() . '</div>
-        
-    </div>
-</div>
-';
-echo (new ModuleManager($sliceId))->getInput($html);
+$output .= '</div></div>';
+echo (new ModuleManager($sliceId))->getInput($output);

@@ -44,8 +44,9 @@ class ContentBuilder
             $theme_class = isset($rex_values_settings['theme_class']) ? $rex_values_settings['theme_class'] : '';
             $bild = isset($rex_values_settings['bild']) && !empty($rex_values_settings['bild']) ?  '/media/' . $rex_values_settings['bild'] : '';
             $no_padding_class = isset($rex_values_settings['no_padding']) ? $rex_values_settings['no_padding'] : '';
+            $center = isset($rex_values_settings['center']) ? $rex_values_settings['center'] : '';
 
-            $css_classes = $theme_class . " " . $no_padding_class;
+            $css_classes = $theme_class . " " . $no_padding_class . " " . $center;
             if (!$containerOpen && !isset($rex_values_settings['slide_collector'])) {
                 $content .= self::openContainer();
                 $containerOpen = true;
