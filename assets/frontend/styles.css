@@ -1,0 +1,45 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #333;
+  font-weight: bold;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: border 0.3s ease;
+  border-bottom: 2px solid rgba(0, 0, 0, 0) !important;
+}
+
+a:hover {
+  border-bottom: 2px solid #333 !important;
+}
+
+.my-navbar {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+main {
+  min-height: calc(100vh - 87px);
+  padding-top: 30px;
+}
+
+footer {
+  text-align: center;
+  padding: 5px 0;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+footer .footer-wrapper {
+  display: inline-block;
+}
+
+footer .footer-wrapper a {
+  padding: 0 10px;
+}
+
+.center {
+  margin: 0 auto;
+}
