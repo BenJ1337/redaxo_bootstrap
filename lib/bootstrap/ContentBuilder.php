@@ -2,6 +2,8 @@
 
 namespace redaxo_bootstrap;
 
+use rex;
+
 class ContentBuilder
 {
 
@@ -21,13 +23,24 @@ class ContentBuilder
 
         //iterates through slices of one article
         foreach ($rexArticleSlice as $slice) {
-
-            $rex_values_settings = json_decode($slice->getValue(1), true);
+            $rexValue1 = $slice->getValue(1);
+            if (null === $rexValue1) {
+                return $slice->getSlice();
+            }
+            $rex_values_settings = json_decode($rexValue1, true);
             $colSizeMap = array();
+            $colSizeMap[BootstrapColWidth::xxl] = 6;
+            $colSizeMap[BootstrapColWidth::xl] = 6;
             $colSizeMap[BootstrapColWidth::lg] = 6;
             $colSizeMap[BootstrapColWidth::md] = 12;
             $colSizeMap[BootstrapColWidth::sm] = 12;
             $colSizeMap[BootstrapColWidth::xs] = 12;
+            if (isset($rex_values_settings[BootstrapColWidth::xxl])) {
+                $colSizeMap[BootstrapColWidth::xxl] = $rex_values_settings[BootstrapColWidth::xxl];
+            }
+            if (isset($rex_values_settings[BootstrapColWidth::xl])) {
+                $colSizeMap[BootstrapColWidth::xl] = $rex_values_settings[BootstrapColWidth::xl];
+            }
             if (isset($rex_values_settings[BootstrapColWidth::lg])) {
                 $colSizeMap[BootstrapColWidth::lg] = $rex_values_settings[BootstrapColWidth::lg];
             }
@@ -149,10 +162,12 @@ class ContentBuilder
     private static function openColumn($currentSliceColumnSize,  $css_classes = '')
     {
         $openTag = '<div class="';
-        $openTag .= 'col-lg-' . $currentSliceColumnSize[BootstrapColWidth::lg];
-        $openTag .= ' ' . 'col-md-' . $currentSliceColumnSize[BootstrapColWidth::md];
-        $openTag .= ' ' . 'col-sm-' . $currentSliceColumnSize[BootstrapColWidth::sm];
-        $openTag .= ' ' . 'col-xs-' . $currentSliceColumnSize[BootstrapColWidth::xs];
+        $openTag .= ' col-xxl-' . $currentSliceColumnSize[BootstrapColWidth::xxl];
+        $openTag .= ' col-xl-' . $currentSliceColumnSize[BootstrapColWidth::xl];
+        $openTag .= ' col-lg-' . $currentSliceColumnSize[BootstrapColWidth::lg];
+        $openTag .= ' col-md-' . $currentSliceColumnSize[BootstrapColWidth::md];
+        $openTag .= ' col-sm-' . $currentSliceColumnSize[BootstrapColWidth::sm];
+        $openTag .= ' col-xs-' . $currentSliceColumnSize[BootstrapColWidth::xs];
         $openTag .= ' ' . $css_classes;
         $openTag .= '">';
         return $openTag;
@@ -177,6 +192,12 @@ class ContentBuilder
     private static function getMinimum($columnSizeMap)
     {
         $result = 12;
+        if ($result > $columnSizeMap[BootstrapColWidth::xxl]) {
+            $result = $columnSizeMap[BootstrapColWidth::xxl];
+        }
+        if ($result > $columnSizeMap[BootstrapColWidth::xl]) {
+            $result = $columnSizeMap[BootstrapColWidth::xl];
+        }
         if ($result > $columnSizeMap[BootstrapColWidth::lg]) {
             $result = $columnSizeMap[BootstrapColWidth::lg];
         }

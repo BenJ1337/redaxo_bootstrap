@@ -20,7 +20,7 @@ $styles = '';
 $bodyBackgroundImage = Settings::getBackogrundImage();
 if (null !== $bodyBackgroundImage) {
     $styles .= 'background: url(/media/' . $bodyBackgroundImage . ');';
-    $styles .= 'background-size: cover;background-repeat: no-repeat;background-position: top, center;';
+    $styles .= 'background-size: cover; background-repeat: no-repeat; background-position: top, center;';
 }
 ?>
 

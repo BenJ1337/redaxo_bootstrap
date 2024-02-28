@@ -43,6 +43,56 @@ class CM_BootstrapFormBuilder
         $output .= '<div class="form-group"><a target="_blank" href="https://getbootstrap.com/docs/4.0/layout/grid/#grid-options">Dokumentation: Bootstrap 4 Grid</a></div>';
         $output .= '<div class="form-group">';
         $dropDown = new DropDown(
+            rex_i18n::msg('cm_bootstrap_grid_xxlarge'),
+            [BootstrapColWidth::xxl],
+            $this->sliceId,
+            1,
+            array(
+                "1" => "1",
+                "2" => "2",
+                "3" => "3",
+                "4" => "4",
+                "5" => "5",
+                "6" => "6",
+                "7" => "7",
+                "8" => "8",
+                "9" => "9",
+                "10" => "10",
+                "11" => "11",
+                "12" => "12"
+            )
+        );
+        $dropDown->setDefaultValue($this->lgWidth);
+        $output .= $dropDown->getHTML()
+            . '</div>'
+            . '<div class="form-group">';
+        $output .= '<div class="form-group">';
+        $dropDown = new DropDown(
+            rex_i18n::msg('cm_bootstrap_grid_xlarge'),
+            [BootstrapColWidth::xl],
+            $this->sliceId,
+            1,
+            array(
+                "1" => "1",
+                "2" => "2",
+                "3" => "3",
+                "4" => "4",
+                "5" => "5",
+                "6" => "6",
+                "7" => "7",
+                "8" => "8",
+                "9" => "9",
+                "10" => "10",
+                "11" => "11",
+                "12" => "12"
+            )
+        );
+        $dropDown->setDefaultValue($this->lgWidth);
+        $output .= $dropDown->getHTML()
+            . '</div>'
+            . '<div class="form-group">';
+        $output .= '<div class="form-group">';
+        $dropDown = new DropDown(
             rex_i18n::msg('cm_bootstrap_grid_large'),
             [BootstrapColWidth::lg],
             $this->sliceId,

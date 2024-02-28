@@ -19,6 +19,8 @@ class ModuleManager
         $rex_values_settings = json_decode(rex_article_slice::getArticleSliceById($this->sliceId)->getValue(1), true);
 
         $outputBuilder = new CM_OutputBuilder(
+            $rex_values_settings[BootstrapColWidth::xxl],
+            $rex_values_settings[BootstrapColWidth::xl],
             $rex_values_settings[BootstrapColWidth::lg],
             $rex_values_settings[BootstrapColWidth::md],
             $rex_values_settings[BootstrapColWidth::sm],
