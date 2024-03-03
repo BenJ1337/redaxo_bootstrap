@@ -15,11 +15,15 @@ $content = ContentBuilder::buildContent($arr);
 </head>
 
 <?php
-
+$bodyBackgroundImage = $curArtikel->getValue('art_backgroundImage');
 $styles = '';
-$bodyBackgroundImage = Settings::getBackogrundImage();
-if (null !== $bodyBackgroundImage) {
-    $styles .= 'background: url(/media/' . $bodyBackgroundImage . ');';
+$root = rex::getServer();
+if (str_ends_with($root, '/')) {
+    $root = substr($root, 0, strlen($root) - 1);
+}
+//$bodyBackgroundImage = Settings::getBackogrundImage();
+if (!empty($bodyBackgroundImage)) {
+    $styles .= 'background: url(' . $root . '/media/' . $bodyBackgroundImage . ');';
     $styles .= 'background-size: cover; background-repeat: no-repeat; background-position: top, center;';
 }
 ?>
