@@ -167,7 +167,7 @@ class ContentBuilder
         $openTag .= ' col-lg-' . $currentSliceColumnSize[BootstrapColWidth::lg];
         $openTag .= ' col-md-' . $currentSliceColumnSize[BootstrapColWidth::md];
         $openTag .= ' col-sm-' . $currentSliceColumnSize[BootstrapColWidth::sm];
-        $openTag .= ' col-xs-' . $currentSliceColumnSize[BootstrapColWidth::xs];
+        $openTag .= ' col-' . $currentSliceColumnSize[BootstrapColWidth::xs];
         $openTag .= ' ' . $css_classes;
         $openTag .= '">';
         return $openTag;

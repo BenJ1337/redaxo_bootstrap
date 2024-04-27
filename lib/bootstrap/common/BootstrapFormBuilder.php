@@ -112,7 +112,7 @@ class CM_BootstrapFormBuilder
                 "12" => "12"
             )
         );
-        $dropDown->setDefaultValue($this->lgWidth);
+        $dropDown->setDefaultValue($this->mdWidth);
         $output .= $dropDown->getHTML()
             . '</div>'
             . '<div class="form-group">';
@@ -136,7 +136,7 @@ class CM_BootstrapFormBuilder
                 "12" => "12"
             )
         );
-        $dropDown->setDefaultValue($this->mdWidth);
+        $dropDown->setDefaultValue($this->smWidth);
         $output .= $dropDown->getHTML()
             . '</div>'
             . '<div class="form-group">';
@@ -160,7 +160,7 @@ class CM_BootstrapFormBuilder
                 "12" => "12"
             )
         );
-        $dropDown->setDefaultValue($this->smWidth);
+        $dropDown->setDefaultValue($this->xsWidth);
         $output .= $dropDown->getHTML()
             . '</div>'
             . '<div class="form-group">';
