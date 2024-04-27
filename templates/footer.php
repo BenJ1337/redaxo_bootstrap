@@ -5,7 +5,6 @@
                 <div class="footer-wrapper">
                     <nav class="navbar navbar-expand">
                         <?php
-
                         use redaxo_bootstrap\Settings;
 
                         if (empty(Settings::getImpressum())) {

@@ -40,10 +40,10 @@ class CM_BootstrapFormBuilder
     public function build()
     {
         $output = '';
-        $output .= '<div class="form-group"><a target="_blank" href="https://getbootstrap.com/docs/4.0/layout/grid/#grid-options">Dokumentation: Bootstrap 4 Grid</a></div>';
+        $output .= '<div class="form-group"><a target="_blank" href="https://getbootstrap.com/docs/5.3/layout/grid/">Dokumentation: Bootstrap 5 Grid</a></div>';
         $output .= '<div class="form-group">';
         $dropDown = new DropDown(
-            rex_i18n::msg('cm_bootstrap_grid_xxlarge'),
+            rex_i18n::msg('cm_bootstrap_grid_extra_extra_large'),
             [BootstrapColWidth::xxl],
             $this->sliceId,
             1,
@@ -68,7 +68,7 @@ class CM_BootstrapFormBuilder
             . '<div class="form-group">';
         $output .= '<div class="form-group">';
         $dropDown = new DropDown(
-            rex_i18n::msg('cm_bootstrap_grid_xlarge'),
+            rex_i18n::msg('cm_bootstrap_grid_extra_large'),
             [BootstrapColWidth::xl],
             $this->sliceId,
             1,
