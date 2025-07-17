@@ -1,6 +1,6 @@
 <?php
 
-use redaxo_eingabekomponenten\{DropDown, Bildauswahl, Checkbox};
+use redaxo_custom_components\{DropDown, Bildauswahl, Checkbox};
 
 use redaxo_bootstrap\{ModuleManager};
 

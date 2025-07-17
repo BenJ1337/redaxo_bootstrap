@@ -2,7 +2,7 @@
 
 namespace redaxo_bootstrap;
 
-use redaxo_eingabekomponenten\DropDown, rex_i18n;
+use redaxo_custom_components\DropDown, rex_i18n;
 
 class CM_BootstrapFormBuilder
 {
